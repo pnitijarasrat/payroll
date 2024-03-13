@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom'
 import useEmployeeAPI from '../../API/useEmployeeAPI'
 import useAttendanceAPI from '../../API/useAttendanceAPI'
 import { disableFormTheme } from '../../components/theme/theme'
+import { useNavigate } from 'react-router-dom'
 
 const EmployeeAttendanceInfo = () => {
     const [attendanceInfoForm] = Form.useForm()
@@ -15,6 +16,8 @@ const EmployeeAttendanceInfo = () => {
 
     const { getOneEmployee, oneEmployee, isGetting } = useEmployeeAPI()
     const { getOneAttendance, oneAttendance, isGettingAttendance, getAttendance } = useAttendanceAPI()
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         getAttendance()
@@ -33,7 +36,6 @@ const EmployeeAttendanceInfo = () => {
                     <ConfigProvider
                         theme={disableFormTheme}
                     >
-
                         <Form
                             form={attendanceInfoForm}
                             layout='vertical'
@@ -94,7 +96,7 @@ const EmployeeAttendanceInfo = () => {
                         </Form>
                     </ConfigProvider>
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
-                        <Button onClick={() => { window.location = "/attendance" }}>Back</Button>
+                        <Button onClick={() => { navigate(-1) }}>Back</Button>
                     </div>
                 </Card>
             </Spin>
