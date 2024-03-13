@@ -69,7 +69,6 @@ const EmployeeAttendanceInfo = () => {
                                     </Form.Item>
                                 </Col>
                             </Row>
-
                             <FormHeader>Hour</FormHeader>
                             <Row gutter={32}>
                                 <Col span={4}>

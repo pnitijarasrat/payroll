@@ -1,8 +1,11 @@
 import React from 'react'
 import { Spin } from 'antd'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const EmployeeTable = ({ employee, isLoading }) => {
+
+    const navigate = useNavigate()
+
     return (
         <Spin spinning={isLoading}>
             <table className='table'>
@@ -28,7 +31,7 @@ const EmployeeTable = ({ employee, isLoading }) => {
                             :
                             employee.map((em) => (
                                 <tr className='bank-row' key={em._id} onClick={() => {
-                                    window.location = `/employee/${em._id}`
+                                    navigate(`/employee/${em._id}`)
                                 }}>
                                     <td>{em.note}</td>
                                     <td>{em.staffId}</td>

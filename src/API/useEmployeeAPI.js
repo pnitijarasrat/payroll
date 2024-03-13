@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import axios from "axios";
 import { url } from "./url";
 import { message } from "antd";
+import { useNavigate } from "react-router-dom";
 
 export default function useEmployeeAPI() {
     const [employee, setEmployee] = useState([])
@@ -10,6 +11,8 @@ export default function useEmployeeAPI() {
     const [oneEmployee, setOneEmployee] = useState({})
     const [isDeleting, setIsDeleting] = useState(false)
     const [isUpdating, setIsUpdating] = useState(false)
+
+    const navigate = useNavigate()
 
     const getEmployee = useCallback((keyword) => {
         setIsGetting(true)
@@ -26,7 +29,6 @@ export default function useEmployeeAPI() {
             }).catch((e) => {
                 setIsGetting(false)
                 message.error(e.message)
-                console.log(e)
             })
     }, [])
 
@@ -40,14 +42,12 @@ export default function useEmployeeAPI() {
                 if (res.status === 201) {
                     message.success('Register Employee Successfully. Redirecting...')
                     setTimeout(() => {
-                        window.location = '/employee'
+                        navigate('/employee')
                     }, 2000)
                 }
-                console.log(res)
             }).catch((e) => {
                 setIsRegistering(false)
                 message.error(e.message)
-                console.log(e)
             })
     }, [])
 
@@ -64,7 +64,6 @@ export default function useEmployeeAPI() {
             .catch((e) => {
                 setIsGetting(false)
                 message.error(e.message)
-                console.log(e)
             })
     }, [])
 
@@ -77,7 +76,7 @@ export default function useEmployeeAPI() {
                 if (res.status === 201) {
                     message.success('Delete Successfully')
                     setTimeout(() => {
-                        window.location = '/employee'
+                        navigate('/employee')
                     }, 2000)
                 }
             })
@@ -96,7 +95,7 @@ export default function useEmployeeAPI() {
                 if (res.status === 201) {
                     message.success('Update Successfully')
                     setTimeout(() => {
-                        window.location = `/employee/${id}`
+                        navigate(`/employee/${id}`)
                     }, 2000)
                 }
             })

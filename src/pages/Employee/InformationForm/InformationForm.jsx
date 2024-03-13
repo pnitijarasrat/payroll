@@ -6,6 +6,7 @@ import Button from '../../../components/Button/Button'
 import BankModal from './BankModal';
 import moment from 'moment';
 import useEmployeeAPI from '../../../API/useEmployeeAPI';
+import { useNavigate } from 'react-router-dom';
 
 const InformationForm = () => {
     const [personalDone, setPersonalDone] = useState(false)
@@ -15,6 +16,8 @@ const InformationForm = () => {
     const [searchBankModal, setSearchBankModel] = useState(false)
 
     const { isRegistering, registerEmployee } = useEmployeeAPI()
+
+    const navigate = useNavigate()
 
     const [personalForm] = Form.useForm()
     const [salaryForm] = Form.useForm()
@@ -283,7 +286,7 @@ const InformationForm = () => {
                     </Button>
                     <Button onClick={(e) => {
                         e.preventDefault()
-                        window.location = '/employee'
+                        navigate('/employee')
                     }}>Cancel</Button>
                 </div>
             </Form>

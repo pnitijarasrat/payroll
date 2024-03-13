@@ -1,11 +1,14 @@
 import React from 'react'
 import { Modal } from 'antd'
 import Button from '../../components/Button/Button'
+import { useNavigate } from 'react-router-dom'
 
 const FixConfirmSalaryModal = ({ isOpen, selectedMonth, closeHandler }) => {
 
+    const navigate = useNavigate()
+
     const onGoTo = () => {
-        return window.location = "/salary"
+        return navigate("/salary")
     }
 
     return (

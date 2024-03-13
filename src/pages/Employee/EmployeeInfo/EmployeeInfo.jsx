@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Card from '../../../components/Card/Card'
 import Header from '../../../components/Header/Header'
 import useEmployeeAPI from '../../../API/useEmployeeAPI'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { FormHeader } from '../InformationForm/InformationForm'
 import { Row, Col, Spin, Form, Input } from 'antd'
 import { ConfigProvider } from 'antd';
@@ -20,6 +20,8 @@ const EmployeeInfo = () => {
     const [personalForm] = Form.useForm()
     const [salaryForm] = Form.useForm()
     const [bankForm] = Form.useForm()
+
+    const navigate = useNavigate()
 
     const handleEdit = () => {
         setIsEditing(!isEditing)
@@ -248,7 +250,7 @@ const EmployeeInfo = () => {
                         <Button primary disabled={!isEditing} onClick={handleUpdate}>
                             {isUpdating ? 'Saving...' : 'Save'}
                         </Button>
-                        <Button onClick={() => { window.location = "/employee" }}>Back</Button>
+                        <Button onClick={() => { navigate(-1) }}>Back</Button>
                     </div>
                 </Card>
             </div >
