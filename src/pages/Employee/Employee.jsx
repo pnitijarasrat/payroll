@@ -9,11 +9,14 @@ import {
     SearchOutlined,
     FilterOutlined
 } from '@ant-design/icons';
+import { useNavigate } from "react-router-dom"
 
 const Employee = () => {
     const { employee, isGetting, getEmployee } = useEmployeeAPI()
     const [messageApi, contextHolder] = message.useMessage();
     const [searchEmployee, setSearchEmployee] = useState('')
+
+    const navigate = useNavigate()
 
     const downloadClick = () => {
         messageApi.open({
@@ -23,7 +26,7 @@ const Employee = () => {
     };
 
     const registerEmployeeClick = () => {
-        window.location = "/employee/register"
+        navigate("/employee/register")
     }
 
     const handleFilter = () => {
