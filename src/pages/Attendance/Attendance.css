@@ -1,0 +1,11 @@
+.attendance-header {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.ant-modal-content {
+    min-width: fit-content;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

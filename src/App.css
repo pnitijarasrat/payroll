@@ -1,0 +1,77 @@
+@import './var.css';
+
+.page-container {
+  margin-left: 250px;
+  width: calc(100vw - 250px);
+  padding: 32px;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  row-gap: 26px;
+  z-index: 1;
+}
+
+.input {
+  border: 1px solid #333;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.action-control {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-control div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table {
+  width: 100%;
+  border: 1px solid #333;
+}
+
+.table th {
+  padding: 12px;
+  background-color: #fafafa;
+  border: 1px solid #333;
+}
+
+.table tbody tr td {
+  text-align: center;
+  padding: 8px 16px;
+  color: #555;
+}
+
+.confirmed-tag {
+  border: 2px solid;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+.confirm {
+  color: var(--green-color);
+  border-color: var(--green-color);
+}
+
+.unconfirmed {
+  color: var(--red-color);
+  border-color: var(--red-color);
+}
+
+.month-li {
+  padding-left: 16px;
+  margin-top: 4px;
+}
+
+.des-header {
+  width: 40%;
+}
+
+.document td {
+  border: 1px solid #999;
+  color: #555;
+}

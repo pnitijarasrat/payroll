@@ -1,0 +1,42 @@
+@import '../../var.css';
+
+.button {
+    padding: 4px 8px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: 0.1s;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+}
+
+
+.button:hover {
+    color: var(--blue-color);
+    border-color: var(--blue-color);
+}
+
+.primary {
+    background-color: var(--blue-color);
+    border-color: var(--blue-color);
+    color: white;
+}
+
+.primary:hover {
+    background-color: var(--dark-blue);
+    color: white;
+    border-color: var(--dark-blue);
+}
+
+.disabled,
+.disabled:hover {
+    color: #999;
+    border-color: #999;
+    background-color: #f1f1f1;
+}
+
+.red:hover {
+    border-color: red;
+    color: red;
+}

@@ -1,0 +1,8 @@
+@import '../../var.css';
+
+.header {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: var(--blue-color);
+}

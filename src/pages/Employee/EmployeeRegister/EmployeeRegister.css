@@ -1,0 +1,31 @@
+.form-container {
+    /* padding: 0 128px; */
+    width: 90%;
+    margin: auto;
+}
+
+.form-type {
+    display: flex;
+}
+
+.form-type div {
+    width: 50%;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: bold;
+    background-color: #777;
+    color: white;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.form-type div:hover {
+    cursor: pointer;
+}
+
+.selected {
+    border: 1px solid #333;
+    color: black !important;
+    background-color: white !important;
+}
