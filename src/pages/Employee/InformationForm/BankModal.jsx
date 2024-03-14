@@ -105,7 +105,6 @@ const BankModal = ({ isOpen, getBankInfo, closeHandler }) => {
                             selectedBranch.map((branch) => (
                                 <tr key={branch.branchId} className='bank-row' onClick={() => {
                                     handleBranchSelection(branch)
-
                                 }}>
                                     <td>{branch.branchId}</td>
                                     <td>{branch.branchName}</td>

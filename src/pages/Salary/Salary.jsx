@@ -88,7 +88,7 @@ const Salary = () => {
                         selectedMonth ?
                             <>
                                 <br />
-                                <div>
+                                <div className="action-control">
                                     <div className="attendance-header">
                                         Selected Month : {selectedMonth}
                                     </div>

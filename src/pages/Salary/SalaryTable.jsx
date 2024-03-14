@@ -16,6 +16,7 @@ const SalaryTable = ({ selectedMonth }) => {
     useEffect(() => {
         getEmployee()
         getAttendance(selectedMonth)
+        console.log(attendance)
     }, [selectedMonth])
 
     const handleViewAttendance = () => {
@@ -45,23 +46,25 @@ const SalaryTable = ({ selectedMonth }) => {
                                             <td>{em.nameTh} {em.lastNameTh}</td>
                                             <td>
                                                 {
-                                                    attendance.filter((at) => (em._id === at.employeeId))[0].attendanceData.length === 0 ?
-                                                        'No Attendance' :
-                                                        <Button onClick={() => {
-                                                            const at = attendance.filter((at) => (em._id === at.employeeId))[0]
-                                                            if (at.attendanceData.length === 0) {
-                                                                return message.info(`This employee has no attendance data of ${selectedMonth}`)
+                                                    attendance.length !== 0 &&
+                                                    (
+                                                        attendance.filter((at) => (em._id === at.employeeId))[0].attendanceData.length === 0 ?
+                                                            'No Attendance' :
+                                                            <Button onClick={() => {
+                                                                const at = attendance.filter((at) => (em._id === at.employeeId))[0]
+                                                                if (at.attendanceData.length === 0) {
+                                                                    return message.info(`This employee has no attendance data of ${selectedMonth}`)
+                                                                }
+                                                                setId(em._id)
+                                                                setAtId(at.attendanceData[at.attendanceData.length - 1]._id)
+                                                                handleViewAttendance()
                                                             }
-                                                            setId(em._id)
-                                                            setAtId(at.attendanceData[at.attendanceData.length - 1]._id)
-                                                            handleViewAttendance()
-                                                        }
-                                                        }
-                                                        >
-                                                            View
-                                                        </Button>
+                                                            }
+                                                            >
+                                                                View
+                                                            </Button>
+                                                    )
                                                 }
-
                                             </td>
                                             <td>{em.salary} THB.</td>
                                         </tr>
