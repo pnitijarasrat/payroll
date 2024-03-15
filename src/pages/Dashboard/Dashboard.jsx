@@ -30,7 +30,7 @@ const Dashboard = () => {
             icon: <UsergroupAddOutlined type='message' style={{ fontSize: '72px' }} />,
             name: "Register Employee",
             path: "/employee/register",
-            desc: <div>{!isGetting ? `New employee: ${employee.length}` : 'Loading...'}</div>
+            desc: <div>{!isGetting ? `New employee: ${employee.length - 1}` : 'Loading...'}</div>
         },
         {
             icon: <ClockCircleOutlined type='message' style={{ fontSize: '72px' }} />,
